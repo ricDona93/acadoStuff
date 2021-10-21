@@ -1,0 +1,11 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/riccardodona/CLionProjects/testACADO
+-- ********************************************************************************
+-- ---> Looking for ACADO toolkit:
+-- Found ACADO toolkit include directories: /Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit;/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado;/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages;/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include;/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build
+-- Found ACADO toolkit library directories: /Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build/lib
+-- Could not find ACADO static library.
+-- Found ACADO shared library: acado_toolkit_s
+-- ********************************************************************************
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug

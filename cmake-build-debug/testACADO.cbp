@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="testACADO"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackPacXY">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackPacXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackPacXY"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackPacXY/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackPacXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackPacXY/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackMinT">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackMinT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackMinT"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackMinT/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackMinT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackMinT/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kinematic_minT">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/kinematic_minT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 kinematic_minT"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kinematic_minT/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/kinematic_minT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 kinematic_minT/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackXY">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackXY"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackXY/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackXY" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackXY/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrack">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrack"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrack/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrack/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackVec">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackVec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackVec"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackVec/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackVec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackVec/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackActuator">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackActuator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackActuator"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="singleTrackActuator/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/bin/singleTrackActuator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 singleTrackActuator/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="codeGen">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/code_gen/codeGen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 codeGen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="codeGen/fast">
+				<Option output="/Users/riccardodona/CLionProjects/testACADO/code_gen/codeGen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/riccardodona/CLionProjects/testACADO/."/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/acado"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/external_packages/qpOASES-3.2.0/include"/>
+					<Add directory="/Users/riccardodona/Documents/University/PhD/repositories/ACADOtoolkit/build"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 codeGen/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/code_gen.cpp">
+			<Option target="codeGen"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/kinematic_minT.cpp">
+			<Option target="kinematic_minT"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/main.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track.cpp">
+			<Option target="singleTrack"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track_XY.cpp">
+			<Option target="singleTrackXY"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track_actuator.cpp">
+			<Option target="singleTrackActuator"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track_minT.cpp">
+			<Option target="singleTrackMinT"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track_pacejka_XY.cpp">
+			<Option target="singleTrackPacXY"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/tests/single_track_vector_ref.cpp">
+			<Option target="singleTrackVec"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/riccardodona/CLionProjects/testACADO/FindACADO.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

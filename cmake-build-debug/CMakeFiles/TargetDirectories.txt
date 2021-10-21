@@ -1,0 +1,11 @@
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrackPacXY.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrackMinT.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/kinematic_minT.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrackXY.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/test.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrack.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrackVec.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/singleTrackActuator.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles/codeGen.dir
