@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /Users/riccardodona/CLionProjects/testACADO/cmake-build-relea
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -124,6 +124,19 @@ singleTrackPacXY/fast:
 .PHONY : singleTrackPacXY/fast
 
 #=============================================================================
+# Target rules for targets named singleTrackPacMinT
+
+# Build rule for target.
+singleTrackPacMinT: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrackPacMinT
+.PHONY : singleTrackPacMinT
+
+# fast build rule for target.
+singleTrackPacMinT/fast:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/build
+.PHONY : singleTrackPacMinT/fast
+
+#=============================================================================
 # Target rules for targets named singleTrackMinT
 
 # Build rule for target.
@@ -135,32 +148,6 @@ singleTrackMinT: cmake_check_build_system
 singleTrackMinT/fast:
 	$(MAKE) -f CMakeFiles/singleTrackMinT.dir/build.make CMakeFiles/singleTrackMinT.dir/build
 .PHONY : singleTrackMinT/fast
-
-#=============================================================================
-# Target rules for targets named kinematic_minT
-
-# Build rule for target.
-kinematic_minT: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kinematic_minT
-.PHONY : kinematic_minT
-
-# fast build rule for target.
-kinematic_minT/fast:
-	$(MAKE) -f CMakeFiles/kinematic_minT.dir/build.make CMakeFiles/kinematic_minT.dir/build
-.PHONY : kinematic_minT/fast
-
-#=============================================================================
-# Target rules for targets named singleTrackXY
-
-# Build rule for target.
-singleTrackXY: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 singleTrackXY
-.PHONY : singleTrackXY
-
-# fast build rule for target.
-singleTrackXY/fast:
-	$(MAKE) -f CMakeFiles/singleTrackXY.dir/build.make CMakeFiles/singleTrackXY.dir/build
-.PHONY : singleTrackXY/fast
 
 #=============================================================================
 # Target rules for targets named test
@@ -176,17 +163,17 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named singleTrack
+# Target rules for targets named singleTrackJerkMinT
 
 # Build rule for target.
-singleTrack: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 singleTrack
-.PHONY : singleTrack
+singleTrackJerkMinT: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrackJerkMinT
+.PHONY : singleTrackJerkMinT
 
 # fast build rule for target.
-singleTrack/fast:
-	$(MAKE) -f CMakeFiles/singleTrack.dir/build.make CMakeFiles/singleTrack.dir/build
-.PHONY : singleTrack/fast
+singleTrackJerkMinT/fast:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/build
+.PHONY : singleTrackJerkMinT/fast
 
 #=============================================================================
 # Target rules for targets named singleTrackVec
@@ -202,17 +189,17 @@ singleTrackVec/fast:
 .PHONY : singleTrackVec/fast
 
 #=============================================================================
-# Target rules for targets named singleTrackActuator
+# Target rules for targets named kinematic_minT
 
 # Build rule for target.
-singleTrackActuator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 singleTrackActuator
-.PHONY : singleTrackActuator
+kinematic_minT: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kinematic_minT
+.PHONY : kinematic_minT
 
 # fast build rule for target.
-singleTrackActuator/fast:
-	$(MAKE) -f CMakeFiles/singleTrackActuator.dir/build.make CMakeFiles/singleTrackActuator.dir/build
-.PHONY : singleTrackActuator/fast
+kinematic_minT/fast:
+	$(MAKE) -f CMakeFiles/kinematic_minT.dir/build.make CMakeFiles/kinematic_minT.dir/build
+.PHONY : kinematic_minT/fast
 
 #=============================================================================
 # Target rules for targets named codeGen
@@ -226,6 +213,45 @@ codeGen: cmake_check_build_system
 codeGen/fast:
 	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/build
 .PHONY : codeGen/fast
+
+#=============================================================================
+# Target rules for targets named singleTrackXY
+
+# Build rule for target.
+singleTrackXY: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrackXY
+.PHONY : singleTrackXY
+
+# fast build rule for target.
+singleTrackXY/fast:
+	$(MAKE) -f CMakeFiles/singleTrackXY.dir/build.make CMakeFiles/singleTrackXY.dir/build
+.PHONY : singleTrackXY/fast
+
+#=============================================================================
+# Target rules for targets named singleTrack
+
+# Build rule for target.
+singleTrack: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrack
+.PHONY : singleTrack
+
+# fast build rule for target.
+singleTrack/fast:
+	$(MAKE) -f CMakeFiles/singleTrack.dir/build.make CMakeFiles/singleTrack.dir/build
+.PHONY : singleTrack/fast
+
+#=============================================================================
+# Target rules for targets named singleTrackActuator
+
+# Build rule for target.
+singleTrackActuator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrackActuator
+.PHONY : singleTrackActuator
+
+# fast build rule for target.
+singleTrackActuator/fast:
+	$(MAKE) -f CMakeFiles/singleTrackActuator.dir/build.make CMakeFiles/singleTrackActuator.dir/build
+.PHONY : singleTrackActuator/fast
 
 tests/code_gen.o: tests/code_gen.cpp.o
 
@@ -389,6 +415,33 @@ tests/single_track_actuator.cpp.s:
 	$(MAKE) -f CMakeFiles/singleTrackActuator.dir/build.make CMakeFiles/singleTrackActuator.dir/tests/single_track_actuator.cpp.s
 .PHONY : tests/single_track_actuator.cpp.s
 
+tests/single_track_jerk_minT.o: tests/single_track_jerk_minT.cpp.o
+
+.PHONY : tests/single_track_jerk_minT.o
+
+# target to build an object file
+tests/single_track_jerk_minT.cpp.o:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/tests/single_track_jerk_minT.cpp.o
+.PHONY : tests/single_track_jerk_minT.cpp.o
+
+tests/single_track_jerk_minT.i: tests/single_track_jerk_minT.cpp.i
+
+.PHONY : tests/single_track_jerk_minT.i
+
+# target to preprocess a source file
+tests/single_track_jerk_minT.cpp.i:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/tests/single_track_jerk_minT.cpp.i
+.PHONY : tests/single_track_jerk_minT.cpp.i
+
+tests/single_track_jerk_minT.s: tests/single_track_jerk_minT.cpp.s
+
+.PHONY : tests/single_track_jerk_minT.s
+
+# target to generate assembly for a file
+tests/single_track_jerk_minT.cpp.s:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/tests/single_track_jerk_minT.cpp.s
+.PHONY : tests/single_track_jerk_minT.cpp.s
+
 tests/single_track_minT.o: tests/single_track_minT.cpp.o
 
 .PHONY : tests/single_track_minT.o
@@ -415,6 +468,33 @@ tests/single_track_minT.s: tests/single_track_minT.cpp.s
 tests/single_track_minT.cpp.s:
 	$(MAKE) -f CMakeFiles/singleTrackMinT.dir/build.make CMakeFiles/singleTrackMinT.dir/tests/single_track_minT.cpp.s
 .PHONY : tests/single_track_minT.cpp.s
+
+tests/single_track_pac_minT.o: tests/single_track_pac_minT.cpp.o
+
+.PHONY : tests/single_track_pac_minT.o
+
+# target to build an object file
+tests/single_track_pac_minT.cpp.o:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/tests/single_track_pac_minT.cpp.o
+.PHONY : tests/single_track_pac_minT.cpp.o
+
+tests/single_track_pac_minT.i: tests/single_track_pac_minT.cpp.i
+
+.PHONY : tests/single_track_pac_minT.i
+
+# target to preprocess a source file
+tests/single_track_pac_minT.cpp.i:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/tests/single_track_pac_minT.cpp.i
+.PHONY : tests/single_track_pac_minT.cpp.i
+
+tests/single_track_pac_minT.s: tests/single_track_pac_minT.cpp.s
+
+.PHONY : tests/single_track_pac_minT.s
+
+# target to generate assembly for a file
+tests/single_track_pac_minT.cpp.s:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/tests/single_track_pac_minT.cpp.s
+.PHONY : tests/single_track_pac_minT.cpp.s
 
 tests/single_track_pacejka_XY.o: tests/single_track_pacejka_XY.cpp.o
 
@@ -476,17 +556,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
 	@echo "... singleTrackPacXY"
+	@echo "... singleTrackPacMinT"
 	@echo "... singleTrackMinT"
-	@echo "... kinematic_minT"
-	@echo "... singleTrackXY"
 	@echo "... test"
-	@echo "... singleTrack"
+	@echo "... singleTrackJerkMinT"
 	@echo "... singleTrackVec"
-	@echo "... singleTrackActuator"
+	@echo "... kinematic_minT"
 	@echo "... codeGen"
+	@echo "... singleTrackXY"
+	@echo "... singleTrack"
+	@echo "... singleTrackActuator"
 	@echo "... tests/code_gen.o"
 	@echo "... tests/code_gen.i"
 	@echo "... tests/code_gen.s"
@@ -505,9 +587,15 @@ help:
 	@echo "... tests/single_track_actuator.o"
 	@echo "... tests/single_track_actuator.i"
 	@echo "... tests/single_track_actuator.s"
+	@echo "... tests/single_track_jerk_minT.o"
+	@echo "... tests/single_track_jerk_minT.i"
+	@echo "... tests/single_track_jerk_minT.s"
 	@echo "... tests/single_track_minT.o"
 	@echo "... tests/single_track_minT.i"
 	@echo "... tests/single_track_minT.s"
+	@echo "... tests/single_track_pac_minT.o"
+	@echo "... tests/single_track_pac_minT.i"
+	@echo "... tests/single_track_pac_minT.s"
 	@echo "... tests/single_track_pacejka_XY.o"
 	@echo "... tests/single_track_pacejka_XY.i"
 	@echo "... tests/single_track_pacejka_XY.s"

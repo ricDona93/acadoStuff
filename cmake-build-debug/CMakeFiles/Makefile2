@@ -54,27 +54,31 @@ CMAKE_BINARY_DIR = /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/singleTrackPacXY.dir/all
+all: CMakeFiles/singleTrackPacMinT.dir/all
 all: CMakeFiles/singleTrackMinT.dir/all
-all: CMakeFiles/kinematic_minT.dir/all
-all: CMakeFiles/singleTrackXY.dir/all
 all: CMakeFiles/test.dir/all
-all: CMakeFiles/singleTrack.dir/all
+all: CMakeFiles/singleTrackJerkMinT.dir/all
 all: CMakeFiles/singleTrackVec.dir/all
-all: CMakeFiles/singleTrackActuator.dir/all
+all: CMakeFiles/kinematic_minT.dir/all
 all: CMakeFiles/codeGen.dir/all
+all: CMakeFiles/singleTrackXY.dir/all
+all: CMakeFiles/singleTrack.dir/all
+all: CMakeFiles/singleTrackActuator.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
 clean: CMakeFiles/singleTrackPacXY.dir/clean
+clean: CMakeFiles/singleTrackPacMinT.dir/clean
 clean: CMakeFiles/singleTrackMinT.dir/clean
-clean: CMakeFiles/kinematic_minT.dir/clean
-clean: CMakeFiles/singleTrackXY.dir/clean
 clean: CMakeFiles/test.dir/clean
-clean: CMakeFiles/singleTrack.dir/clean
+clean: CMakeFiles/singleTrackJerkMinT.dir/clean
 clean: CMakeFiles/singleTrackVec.dir/clean
-clean: CMakeFiles/singleTrackActuator.dir/clean
+clean: CMakeFiles/kinematic_minT.dir/clean
 clean: CMakeFiles/codeGen.dir/clean
+clean: CMakeFiles/singleTrackXY.dir/clean
+clean: CMakeFiles/singleTrack.dir/clean
+clean: CMakeFiles/singleTrackActuator.dir/clean
 
 .PHONY : clean
 
@@ -90,7 +94,7 @@ preinstall:
 CMakeFiles/singleTrackPacXY.dir/all:
 	$(MAKE) -f CMakeFiles/singleTrackPacXY.dir/build.make CMakeFiles/singleTrackPacXY.dir/depend
 	$(MAKE) -f CMakeFiles/singleTrackPacXY.dir/build.make CMakeFiles/singleTrackPacXY.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target singleTrackPacXY"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target singleTrackPacXY"
 .PHONY : CMakeFiles/singleTrackPacXY.dir/all
 
 # Build rule for subdir invocation for target.
@@ -111,13 +115,40 @@ CMakeFiles/singleTrackPacXY.dir/clean:
 .PHONY : CMakeFiles/singleTrackPacXY.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/singleTrackPacMinT.dir
+
+# All Build rule for target.
+CMakeFiles/singleTrackPacMinT.dir/all:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/depend
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target singleTrackPacMinT"
+.PHONY : CMakeFiles/singleTrackPacMinT.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/singleTrackPacMinT.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/singleTrackPacMinT.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/singleTrackPacMinT.dir/rule
+
+# Convenience name for target.
+singleTrackPacMinT: CMakeFiles/singleTrackPacMinT.dir/rule
+
+.PHONY : singleTrackPacMinT
+
+# clean rule for target.
+CMakeFiles/singleTrackPacMinT.dir/clean:
+	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/clean
+.PHONY : CMakeFiles/singleTrackPacMinT.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/singleTrackMinT.dir
 
 # All Build rule for target.
 CMakeFiles/singleTrackMinT.dir/all:
 	$(MAKE) -f CMakeFiles/singleTrackMinT.dir/build.make CMakeFiles/singleTrackMinT.dir/depend
 	$(MAKE) -f CMakeFiles/singleTrackMinT.dir/build.make CMakeFiles/singleTrackMinT.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target singleTrackMinT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target singleTrackMinT"
 .PHONY : CMakeFiles/singleTrackMinT.dir/all
 
 # Build rule for subdir invocation for target.
@@ -136,6 +167,87 @@ singleTrackMinT: CMakeFiles/singleTrackMinT.dir/rule
 CMakeFiles/singleTrackMinT.dir/clean:
 	$(MAKE) -f CMakeFiles/singleTrackMinT.dir/build.make CMakeFiles/singleTrackMinT.dir/clean
 .PHONY : CMakeFiles/singleTrackMinT.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test.dir
+
+# All Build rule for target.
+CMakeFiles/test.dir/all:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target test"
+.PHONY : CMakeFiles/test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: CMakeFiles/test.dir/rule
+
+.PHONY : test
+
+# clean rule for target.
+CMakeFiles/test.dir/clean:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
+.PHONY : CMakeFiles/test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/singleTrackJerkMinT.dir
+
+# All Build rule for target.
+CMakeFiles/singleTrackJerkMinT.dir/all:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/depend
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target singleTrackJerkMinT"
+.PHONY : CMakeFiles/singleTrackJerkMinT.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/singleTrackJerkMinT.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/singleTrackJerkMinT.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/singleTrackJerkMinT.dir/rule
+
+# Convenience name for target.
+singleTrackJerkMinT: CMakeFiles/singleTrackJerkMinT.dir/rule
+
+.PHONY : singleTrackJerkMinT
+
+# clean rule for target.
+CMakeFiles/singleTrackJerkMinT.dir/clean:
+	$(MAKE) -f CMakeFiles/singleTrackJerkMinT.dir/build.make CMakeFiles/singleTrackJerkMinT.dir/clean
+.PHONY : CMakeFiles/singleTrackJerkMinT.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/singleTrackVec.dir
+
+# All Build rule for target.
+CMakeFiles/singleTrackVec.dir/all:
+	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/depend
+	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target singleTrackVec"
+.PHONY : CMakeFiles/singleTrackVec.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/singleTrackVec.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/singleTrackVec.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/singleTrackVec.dir/rule
+
+# Convenience name for target.
+singleTrackVec: CMakeFiles/singleTrackVec.dir/rule
+
+.PHONY : singleTrackVec
+
+# clean rule for target.
+CMakeFiles/singleTrackVec.dir/clean:
+	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/clean
+.PHONY : CMakeFiles/singleTrackVec.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/kinematic_minT.dir
@@ -165,13 +277,40 @@ CMakeFiles/kinematic_minT.dir/clean:
 .PHONY : CMakeFiles/kinematic_minT.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/codeGen.dir
+
+# All Build rule for target.
+CMakeFiles/codeGen.dir/all:
+	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/depend
+	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target codeGen"
+.PHONY : CMakeFiles/codeGen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/codeGen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/codeGen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/codeGen.dir/rule
+
+# Convenience name for target.
+codeGen: CMakeFiles/codeGen.dir/rule
+
+.PHONY : codeGen
+
+# clean rule for target.
+CMakeFiles/codeGen.dir/clean:
+	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/clean
+.PHONY : CMakeFiles/codeGen.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/singleTrackXY.dir
 
 # All Build rule for target.
 CMakeFiles/singleTrackXY.dir/all:
 	$(MAKE) -f CMakeFiles/singleTrackXY.dir/build.make CMakeFiles/singleTrackXY.dir/depend
 	$(MAKE) -f CMakeFiles/singleTrackXY.dir/build.make CMakeFiles/singleTrackXY.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target singleTrackXY"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target singleTrackXY"
 .PHONY : CMakeFiles/singleTrackXY.dir/all
 
 # Build rule for subdir invocation for target.
@@ -190,33 +329,6 @@ singleTrackXY: CMakeFiles/singleTrackXY.dir/rule
 CMakeFiles/singleTrackXY.dir/clean:
 	$(MAKE) -f CMakeFiles/singleTrackXY.dir/build.make CMakeFiles/singleTrackXY.dir/clean
 .PHONY : CMakeFiles/singleTrackXY.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/test.dir
-
-# All Build rule for target.
-CMakeFiles/test.dir/all:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target test"
-.PHONY : CMakeFiles/test.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/test.dir/rule
-
-# Convenience name for target.
-test: CMakeFiles/test.dir/rule
-
-.PHONY : test
-
-# clean rule for target.
-CMakeFiles/test.dir/clean:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
-.PHONY : CMakeFiles/test.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/singleTrack.dir
@@ -246,33 +358,6 @@ CMakeFiles/singleTrack.dir/clean:
 .PHONY : CMakeFiles/singleTrack.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/singleTrackVec.dir
-
-# All Build rule for target.
-CMakeFiles/singleTrackVec.dir/all:
-	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/depend
-	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target singleTrackVec"
-.PHONY : CMakeFiles/singleTrackVec.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/singleTrackVec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/singleTrackVec.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/singleTrackVec.dir/rule
-
-# Convenience name for target.
-singleTrackVec: CMakeFiles/singleTrackVec.dir/rule
-
-.PHONY : singleTrackVec
-
-# clean rule for target.
-CMakeFiles/singleTrackVec.dir/clean:
-	$(MAKE) -f CMakeFiles/singleTrackVec.dir/build.make CMakeFiles/singleTrackVec.dir/clean
-.PHONY : CMakeFiles/singleTrackVec.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/singleTrackActuator.dir
 
 # All Build rule for target.
@@ -298,33 +383,6 @@ singleTrackActuator: CMakeFiles/singleTrackActuator.dir/rule
 CMakeFiles/singleTrackActuator.dir/clean:
 	$(MAKE) -f CMakeFiles/singleTrackActuator.dir/build.make CMakeFiles/singleTrackActuator.dir/clean
 .PHONY : CMakeFiles/singleTrackActuator.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/codeGen.dir
-
-# All Build rule for target.
-CMakeFiles/codeGen.dir/all:
-	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/depend
-	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target codeGen"
-.PHONY : CMakeFiles/codeGen.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/codeGen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/codeGen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/riccardodona/CLionProjects/testACADO/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/codeGen.dir/rule
-
-# Convenience name for target.
-codeGen: CMakeFiles/codeGen.dir/rule
-
-.PHONY : codeGen
-
-# clean rule for target.
-CMakeFiles/codeGen.dir/clean:
-	$(MAKE) -f CMakeFiles/codeGen.dir/build.make CMakeFiles/codeGen.dir/clean
-.PHONY : CMakeFiles/codeGen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

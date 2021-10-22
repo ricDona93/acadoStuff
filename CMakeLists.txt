@@ -58,6 +58,16 @@ TARGET_LINK_LIBRARIES(singleTrackMinT ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackMinT
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
+add_executable(singleTrackJerkMinT tests/single_track_jerk_minT.cpp)
+TARGET_LINK_LIBRARIES(singleTrackJerkMinT ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackJerkMinT
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
+add_executable(singleTrackPacMinT tests/single_track_pac_minT.cpp)
+TARGET_LINK_LIBRARIES(singleTrackPacMinT ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackPacMinT
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
 add_executable(singleTrackPacXY tests/single_track_pacejka_XY.cpp)
 TARGET_LINK_LIBRARIES(singleTrackPacXY ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackPacXY
