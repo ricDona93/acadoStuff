@@ -11,7 +11,9 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 10.0;       // reference velocity
+    const double V = 30.0;       // reference velocity
+    const double betaMax = 8e-2;
+    const double deltaMax = 0.4;
     const double ayMax = 8;
     const double lat_offs = 3.2;
 
@@ -19,8 +21,8 @@ int main( )
     const double lr = 1.6;
     const double Kr = 60000;
     const double Kf = 55000;
-    const double By = 10;
-    const double Cy = 1.5;
+    const double By = 5;
+    const double Cy = 1.7;
     const double  m = 1500;
     const double  I = 2500;
 
@@ -28,13 +30,14 @@ int main( )
     //-------------------------------------
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
     ocp.minimizeMayerTerm( T )          ;   // the time T should be optimized
+    ocp.minimizeLagrangeTerm(delta*delta);
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------
     f << dot(n)     == V*(psi+beta);
     f << dot(psi)   == Omega;
-    f << dot(Omega) == (2*Cy*(-(Kf*lf*sin(Cy*atan(By*(beta - delta + (lf*Omega)/V)))) + Kr*lr*sin(Cy*atan(By*(beta - (lr*Omega)/V)))))/(By*I);
-    f << dot(beta)  == (-2*Cy*(Kf*sin(Cy*atan(By*(beta - delta + (lf*Omega)/V))) + Kr*sin(Cy*atan(By*(beta - (lr*Omega)/V)))))/(By*m*V) - Omega;
+    f << dot(Omega) == (2*(-(Kf*lf*sin(Cy*atan(By*(beta - delta + (lf*Omega)/V)))) + Kr*lr*sin(Cy*atan(By*(beta - (lr*Omega)/V)))))/(Cy*By*I);
+    f << dot(beta)  == (-2*(Kf*sin(Cy*atan(By*(beta - delta + (lf*Omega)/V))) + Kr*sin(Cy*atan(By*(beta - (lr*Omega)/V)))))/(Cy*By*m*V) - Omega;
 
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     // ----------------------------------
@@ -47,12 +50,13 @@ int main( )
 
     ocp.subjectTo( AT_END  , n == lat_offs );
     ocp.subjectTo( AT_END  , psi ==  0.0 );
-//    ocp.subjectTo( AT_END  , beta ==  0.0 );
+    ocp.subjectTo( AT_END  , beta ==  0.0 );
     ocp.subjectTo( AT_END  , Omega ==  0.0 );
 
-    ocp.subjectTo( -0.2 <= beta <=  0.2   );
+    ocp.subjectTo( -betaMax <= beta <=  betaMax   );
     ocp.subjectTo( -ayMax/V <= Omega <=  ayMax/V  );
-    ocp.subjectTo( -0.2 <= delta <= 0.2 );
+    ocp.subjectTo( -deltaMax <= delta <= deltaMax );
+
 
 
     GnuplotWindow window;
@@ -70,10 +74,16 @@ int main( )
 //    algorithm.set( INTEGRATOR_TYPE      , INT_RK45        );
 //    algorithm.set( INTEGRATOR_TOLERANCE , 1e-10          );
 //    algorithm.set( DISCRETIZATION_TYPE  , SINGLE_SHOOTING );
-    algorithm.set( KKT_TOLERANCE        , 1e-13            );
-
+    algorithm.set( KKT_TOLERANCE        , 1e-14            );
 
     algorithm.solve()                   ;   // and solve the problem.
+
+    VariablesGrid params;
+    algorithm.getParameters( params );
+
+    printf("\n------------- Minimum time for OCP ------------\n");
+    printf("T  =  %.3e (s)", params(0,0) );
+    printf("\n-----------------------------------------------\n");
 
     return 0;
 }

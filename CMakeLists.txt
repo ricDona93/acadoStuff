@@ -68,6 +68,16 @@ TARGET_LINK_LIBRARIES(singleTrackPacMinT ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackPacMinT
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
+add_executable(singleTrackPacRelaxMinT tests/single_track_pac_relax_minT.cpp)
+TARGET_LINK_LIBRARIES(singleTrackPacRelaxMinT ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackPacRelaxMinT
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
+add_executable(testLib libs/test_lib.cpp libs/lib_models.cpp)
+TARGET_LINK_LIBRARIES(testLib ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(testLib
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
 add_executable(singleTrackPacXY tests/single_track_pacejka_XY.cpp)
 TARGET_LINK_LIBRARIES(singleTrackPacXY ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackPacXY

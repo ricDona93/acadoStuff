@@ -3,6 +3,8 @@
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackPacXY.dir
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackPacMinT.dir
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackMinT.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/testLib.dir
+/Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackPacRelaxMinT.dir
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/test.dir
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackJerkMinT.dir
 /Users/riccardodona/CLionProjects/testACADO/cmake-build-release/CMakeFiles/singleTrackVec.dir

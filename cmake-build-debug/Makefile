@@ -150,6 +150,32 @@ singleTrackMinT/fast:
 .PHONY : singleTrackMinT/fast
 
 #=============================================================================
+# Target rules for targets named testLib
+
+# Build rule for target.
+testLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testLib
+.PHONY : testLib
+
+# fast build rule for target.
+testLib/fast:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/build
+.PHONY : testLib/fast
+
+#=============================================================================
+# Target rules for targets named singleTrackPacRelaxMinT
+
+# Build rule for target.
+singleTrackPacRelaxMinT: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 singleTrackPacRelaxMinT
+.PHONY : singleTrackPacRelaxMinT
+
+# fast build rule for target.
+singleTrackPacRelaxMinT/fast:
+	$(MAKE) -f CMakeFiles/singleTrackPacRelaxMinT.dir/build.make CMakeFiles/singleTrackPacRelaxMinT.dir/build
+.PHONY : singleTrackPacRelaxMinT/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -252,6 +278,60 @@ singleTrackActuator: cmake_check_build_system
 singleTrackActuator/fast:
 	$(MAKE) -f CMakeFiles/singleTrackActuator.dir/build.make CMakeFiles/singleTrackActuator.dir/build
 .PHONY : singleTrackActuator/fast
+
+libs/lib_models.o: libs/lib_models.cpp.o
+
+.PHONY : libs/lib_models.o
+
+# target to build an object file
+libs/lib_models.cpp.o:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/lib_models.cpp.o
+.PHONY : libs/lib_models.cpp.o
+
+libs/lib_models.i: libs/lib_models.cpp.i
+
+.PHONY : libs/lib_models.i
+
+# target to preprocess a source file
+libs/lib_models.cpp.i:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/lib_models.cpp.i
+.PHONY : libs/lib_models.cpp.i
+
+libs/lib_models.s: libs/lib_models.cpp.s
+
+.PHONY : libs/lib_models.s
+
+# target to generate assembly for a file
+libs/lib_models.cpp.s:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/lib_models.cpp.s
+.PHONY : libs/lib_models.cpp.s
+
+libs/test_lib.o: libs/test_lib.cpp.o
+
+.PHONY : libs/test_lib.o
+
+# target to build an object file
+libs/test_lib.cpp.o:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/test_lib.cpp.o
+.PHONY : libs/test_lib.cpp.o
+
+libs/test_lib.i: libs/test_lib.cpp.i
+
+.PHONY : libs/test_lib.i
+
+# target to preprocess a source file
+libs/test_lib.cpp.i:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/test_lib.cpp.i
+.PHONY : libs/test_lib.cpp.i
+
+libs/test_lib.s: libs/test_lib.cpp.s
+
+.PHONY : libs/test_lib.s
+
+# target to generate assembly for a file
+libs/test_lib.cpp.s:
+	$(MAKE) -f CMakeFiles/testLib.dir/build.make CMakeFiles/testLib.dir/libs/test_lib.cpp.s
+.PHONY : libs/test_lib.cpp.s
 
 tests/code_gen.o: tests/code_gen.cpp.o
 
@@ -496,6 +576,33 @@ tests/single_track_pac_minT.cpp.s:
 	$(MAKE) -f CMakeFiles/singleTrackPacMinT.dir/build.make CMakeFiles/singleTrackPacMinT.dir/tests/single_track_pac_minT.cpp.s
 .PHONY : tests/single_track_pac_minT.cpp.s
 
+tests/single_track_pac_relax_minT.o: tests/single_track_pac_relax_minT.cpp.o
+
+.PHONY : tests/single_track_pac_relax_minT.o
+
+# target to build an object file
+tests/single_track_pac_relax_minT.cpp.o:
+	$(MAKE) -f CMakeFiles/singleTrackPacRelaxMinT.dir/build.make CMakeFiles/singleTrackPacRelaxMinT.dir/tests/single_track_pac_relax_minT.cpp.o
+.PHONY : tests/single_track_pac_relax_minT.cpp.o
+
+tests/single_track_pac_relax_minT.i: tests/single_track_pac_relax_minT.cpp.i
+
+.PHONY : tests/single_track_pac_relax_minT.i
+
+# target to preprocess a source file
+tests/single_track_pac_relax_minT.cpp.i:
+	$(MAKE) -f CMakeFiles/singleTrackPacRelaxMinT.dir/build.make CMakeFiles/singleTrackPacRelaxMinT.dir/tests/single_track_pac_relax_minT.cpp.i
+.PHONY : tests/single_track_pac_relax_minT.cpp.i
+
+tests/single_track_pac_relax_minT.s: tests/single_track_pac_relax_minT.cpp.s
+
+.PHONY : tests/single_track_pac_relax_minT.s
+
+# target to generate assembly for a file
+tests/single_track_pac_relax_minT.cpp.s:
+	$(MAKE) -f CMakeFiles/singleTrackPacRelaxMinT.dir/build.make CMakeFiles/singleTrackPacRelaxMinT.dir/tests/single_track_pac_relax_minT.cpp.s
+.PHONY : tests/single_track_pac_relax_minT.cpp.s
+
 tests/single_track_pacejka_XY.o: tests/single_track_pacejka_XY.cpp.o
 
 .PHONY : tests/single_track_pacejka_XY.o
@@ -561,6 +668,8 @@ help:
 	@echo "... singleTrackPacXY"
 	@echo "... singleTrackPacMinT"
 	@echo "... singleTrackMinT"
+	@echo "... testLib"
+	@echo "... singleTrackPacRelaxMinT"
 	@echo "... test"
 	@echo "... singleTrackJerkMinT"
 	@echo "... singleTrackVec"
@@ -569,6 +678,12 @@ help:
 	@echo "... singleTrackXY"
 	@echo "... singleTrack"
 	@echo "... singleTrackActuator"
+	@echo "... libs/lib_models.o"
+	@echo "... libs/lib_models.i"
+	@echo "... libs/lib_models.s"
+	@echo "... libs/test_lib.o"
+	@echo "... libs/test_lib.i"
+	@echo "... libs/test_lib.s"
 	@echo "... tests/code_gen.o"
 	@echo "... tests/code_gen.i"
 	@echo "... tests/code_gen.s"
@@ -596,6 +711,9 @@ help:
 	@echo "... tests/single_track_pac_minT.o"
 	@echo "... tests/single_track_pac_minT.i"
 	@echo "... tests/single_track_pac_minT.s"
+	@echo "... tests/single_track_pac_relax_minT.o"
+	@echo "... tests/single_track_pac_relax_minT.i"
+	@echo "... tests/single_track_pac_relax_minT.s"
 	@echo "... tests/single_track_pacejka_XY.o"
 	@echo "... tests/single_track_pacejka_XY.i"
 	@echo "... tests/single_track_pacejka_XY.s"

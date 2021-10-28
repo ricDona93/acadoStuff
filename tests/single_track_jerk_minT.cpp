@@ -11,8 +11,11 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 10.0;       // reference velocity
+    const double V = 30.0;       // reference velocity
+    const double betaMax = 8e-2;
+    const double deltaMax = 0.4;
     const double ayMax = 8;
+    const double jMax  = 1.0;
     const double lat_offs = 3.2;
 
     const double lf = 1.1;
@@ -23,8 +26,10 @@ int main( )
     const double  I = 2500;
 
     //-------------------------------------
-    OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
-    ocp.minimizeMayerTerm( T )          ;   // the time T should be optimized
+    OCP ocp( 0.0, T );
+    ocp.minimizeMayerTerm( T );
+    ocp.minimizeLagrangeTerm(u*u);
+
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------
@@ -41,19 +46,19 @@ int main( )
     ocp.subjectTo( AT_START, n ==  0.0 );
     ocp.subjectTo( AT_START, psi ==  0.01 );
     ocp.subjectTo( AT_START, beta ==  0.0 );
-    ocp.subjectTo( AT_START, Omega == 0.1 );
+    ocp.subjectTo( AT_START, Omega == 0.01 );
     ocp.subjectTo( AT_START, delta == 0. );
 
     ocp.subjectTo( AT_END  , n == lat_offs );
     ocp.subjectTo( AT_END  , psi ==  0.0 );
-//    ocp.subjectTo( AT_END  , beta ==  0.0 );
+    ocp.subjectTo( AT_END  , beta ==  0.0 );
     ocp.subjectTo( AT_END  , Omega ==  0.0 );
     ocp.subjectTo( AT_END  , delta ==  0.0 );
 
-    ocp.subjectTo( -0.1 <= beta <=  0.1   );
+    ocp.subjectTo( -betaMax <= beta <=  betaMax   );
     ocp.subjectTo( -ayMax/V <= Omega <=  ayMax/V  );
-    ocp.subjectTo( -0.2 <= delta <= 0.2 );
-    ocp.subjectTo( -1. <= u <= 1. );
+    ocp.subjectTo( -deltaMax <= delta <= deltaMax );
+    ocp.subjectTo( -jMax <= u <= jMax );
 
     GnuplotWindow window;
     window.addSubplot( n,   "n [m]" );
@@ -73,8 +78,14 @@ int main( )
 //    algorithm.set( DISCRETIZATION_TYPE  , SINGLE_SHOOTING );
     algorithm.set( KKT_TOLERANCE        , 1e-14            );
 
-
     algorithm.solve()                   ;   // and solve the problem.
+
+    VariablesGrid params;
+    algorithm.getParameters( params );
+
+    printf("\n------------- Minimum time for OCP ------------\n");
+    printf("T  =  %.3e (s)", params(0,0) );
+    printf("\n-----------------------------------------------\n");
 
     return 0;
 }
