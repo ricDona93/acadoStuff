@@ -44,7 +44,7 @@ double calcTimeST_delta(double V, double nF){
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     ocp.subjectTo( f );
     ocp.subjectTo( AT_START, n ==  0.0 );
-    ocp.subjectTo( AT_START, psi ==  0.001 );
+    ocp.subjectTo( AT_START, psi ==  0.01 );
     ocp.subjectTo( AT_START, beta ==  0.0 );
     ocp.subjectTo( AT_START, Omega == 0.01 );
 
@@ -103,7 +103,7 @@ double calcTimeST_jerk(double V, double nF){
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     ocp.subjectTo( f );
     ocp.subjectTo( AT_START, n ==  0.0 );
-    ocp.subjectTo( AT_START, psi ==  0.001 );
+    ocp.subjectTo( AT_START, psi ==  0.01 );
     ocp.subjectTo( AT_START, beta ==  0.0 );
     ocp.subjectTo( AT_START, Omega == 0.01 );
 

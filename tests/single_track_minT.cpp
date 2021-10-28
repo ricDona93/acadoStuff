@@ -5,10 +5,7 @@ int main( )
 {
     USING_NAMESPACE_ACADO
 
-    //TODO create library of models
-    //TODO learn how to use Gnuplot
     //TODO find how to print KKT
-
 
     DifferentialState       n, psi, Omega, beta;
     Control                 delta;
@@ -16,7 +13,7 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 30.0;       // reference velocity
+    const double V = 10.0;       // reference velocity
     const double betaMax = 8e-2;
     const double deltaMax = 0.4;
     const double ayMax = 8;
@@ -46,7 +43,7 @@ int main( )
 
     ocp.subjectTo( f );   // minimize T s.t. the model,
     ocp.subjectTo( AT_START, n ==  0.0 );
-    ocp.subjectTo( AT_START, psi ==  0.001 );
+    ocp.subjectTo( AT_START, psi ==  0.01 );
     ocp.subjectTo( AT_START, beta ==  0.0 );
     ocp.subjectTo( AT_START, Omega == 0.01 );
 
