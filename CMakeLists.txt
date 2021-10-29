@@ -6,20 +6,28 @@ PROJECT( testACADO CXX )
 # CMake module(s) path
 SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR} )
 
+SET(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIRS}
+    /usr/local/lib/python3.7/site-packages/numpy/core/include
+    /usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/lib
+    /usr/local/Cellar/python/3.7.5/Frameworks/Python.framework/Versions/3.7/include/python3.7m
+    )
 #
 # Prerequisites
 #
 FIND_PACKAGE( ACADO REQUIRED )
 
+FIND_LIBRARY(PYTHON_LIB
+    NAMES libpython2.7.dylib
+    PATHS /Users/Shared/Epic Games/UE_4.24/Engine/Binaries/ThirdParty/Python/Mac
+)
+
+MESSAGE( STATUS "Python shared library: ${PYTHON_LIB}\n" )
+
 #
 # Include directories
 #
 INCLUDE_DIRECTORIES( . ${ACADO_INCLUDE_DIRS} )
-
-#
-# Build an executable
-#
-#TARGET_LINK_LIBRARIES( <EXEC_NAME> ${ACADO_STATIC_LIBRARIES} )
+INCLUDE_DIRECTORIES( . ${PYTHON_INCLUDE_DIRS} )
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -74,7 +82,7 @@ SET_TARGET_PROPERTIES(singleTrackPacRelaxMinT
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
 add_executable(testLib libs/test_lib.cpp libs/lib_models.cpp)
-TARGET_LINK_LIBRARIES(testLib ${ACADO_SHARED_LIBRARIES} )
+TARGET_LINK_LIBRARIES(testLib  ${ACADO_SHARED_LIBRARIES} ${PYTHON_LIB})
 SET_TARGET_PROPERTIES(testLib
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 

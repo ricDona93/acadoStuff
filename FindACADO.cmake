@@ -27,7 +27,7 @@
 #		in enviromental variables.
 #
 # Usage:
-#	- Linux/Unix: TODO
+#	- Linux/Unix:
 #
 ################################################################################
 

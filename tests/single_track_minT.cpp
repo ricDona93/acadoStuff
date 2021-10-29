@@ -8,6 +8,7 @@ int main( )
     //TODO find how to print KKT
 
     DifferentialState       n, psi, Omega, beta;
+    IntermediateState       ay;
     Control                 delta;
     Parameter               T          ;   // the time horizon T
     DifferentialEquation    f( 0.0, T );
@@ -38,6 +39,8 @@ int main( )
     f << dot(Omega) == -2*(lf*lf*Kf+lr*lr*Kr)/(I*V)*Omega -2*(lf*Kf-lr*Kr)/I*beta + 2*lf*Kf/I*delta;
     f << dot(beta)  == -(1+2*(lf*Kf-lr*Kr)/(m*V*V))*Omega -2*(Kf+Kr)/(m*V)*beta   + 2*Kf/(m*V)*delta;
 
+    ay = -(1+2*(lf*Kf-lr*Kr)/(m*V*V))*Omega -2*(Kf+Kr)/(m*V)*beta   + 2*Kf/(m*V)*delta + Omega*V;
+    
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     // ----------------------------------
 
@@ -60,7 +63,7 @@ int main( )
     window.addSubplot( n,   "n [m]" );
     window.addSubplot( psi,   "psi [rad]" );
     window.addSubplot( beta,   "beta [rad]" );
-    window.addSubplot( beta, Omega, "phase plane" );
+    window.addSubplot( ay, "Lateral acceleration [m/s^2]" );
     window.addSubplot( Omega,   "Omega [rad/s]" );
     window.addSubplot( delta, "steering angle [rad]" );
     window.plot( );
