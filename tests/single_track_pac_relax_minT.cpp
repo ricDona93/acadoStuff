@@ -6,27 +6,27 @@ int main( )
     USING_NAMESPACE_ACADO
 
     DifferentialState       n, psi, Omega, beta, aF, aR, delta;
+    IntermediateState       ay;
     Control                 u;
     Parameter               T          ;   // the time horizon T
     DifferentialEquation    f( 0.0, T );
 
+    const double KKT_th = 1e-14;
+    const double V = 20.0;
+    const double lat_offs =3.5;
 
-    const double V = 30.0;       // reference velocity
     const double betaMax = 8e-2;
-    const double deltaMax = 0.2;
+    const double deltaMax = 0.4;
     const double ayMax = 8;
     const double jMax  = 1.0;
-    const double lat_offs = 3.2;
 
     const double lf = 1.1;
     const double lr = 1.6;
     const double Kr = 60000;
     const double Kf = 55000;
-    const double By = 10;
-    const double Cy = 1.5;
     const double  m = 1500;
     const double  I = 2500;
-    const double lx = 0.2;
+    const double lx = 0.4;
 
     //-------------------------------------
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
@@ -40,17 +40,20 @@ int main( )
 //    f << dot(Omega) == (2*(-(Kf*lf*sin(Cy*atan(By*aF))) + Kr*lr*sin(Cy*atan(By*aR))))/(Cy*By*I);
     f << dot(Omega) == (2*(-(Kf*lf*aF) + Kr*lr*aR))/(I);
 //    f << dot(beta)  == -(2*(Kf*sin(Cy*atan(By*aF))+Kr*sin(Cy*atan(By*aR)))/(Cy*By*m*V))-Omega;
-    f << dot(beta)  == -(2*(Kf*aF+Kr*aR)/(Cy*By*m*V))-Omega;
+    f << dot(beta)  == -(2*(Kf*aF+Kr*aR)/(m*V))-Omega;
     f << dot(aR)    == -V*aR/lx + (V*beta - lr*Omega)/lx;
-    f << dot(aF)    == -V*aF/lx + (V*beta - delta + lf*Omega)/lx;
+    f << dot(aF)    == -V*aF/lx + (V*beta - V*delta + lf*Omega)/lx;
     f << dot(delta) == u;
+
+    ay = -(1+2*(lf*Kf-lr*Kr)/(m*V*V))*Omega -2*(Kf+Kr)/(m*V)*beta   + 2*Kf/(m*V)*delta + Omega*V;
+
 
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     // ----------------------------------
 
     ocp.subjectTo( f );   // minimize T s.t. the model,
     ocp.subjectTo( AT_START, n ==  0.0 );
-    ocp.subjectTo( AT_START, psi ==  0.05 );
+    ocp.subjectTo( AT_START, psi ==  0.01 );
     ocp.subjectTo( AT_START, beta ==  0.0 );
     ocp.subjectTo( AT_START, Omega == 0.01 );
     ocp.subjectTo( AT_START, aR == 0.0 );
@@ -62,7 +65,7 @@ int main( )
     ocp.subjectTo( AT_END  , Omega ==  0.0 );
     ocp.subjectTo( AT_END  , delta ==  0.0 );
     ocp.subjectTo( AT_END  , beta ==  0.0 );
-//    ocp.subjectTo( AT_END, -0.05 <= aR <= 0.05 );
+    ocp.subjectTo( AT_END, -0.01 <= aR <= 0.01 );
 //    ocp.subjectTo( AT_END, -0.05 <= aF <= 0.05 );
 //    ocp.subjectTo( AT_END, aR == 0.0 );
 //    ocp.subjectTo( AT_END, aF == 0.0 );
@@ -70,7 +73,7 @@ int main( )
 
 //    ocp.subjectTo( 0 <= T <=  4   );
     ocp.subjectTo( -betaMax <= beta <=  betaMax   );
-    ocp.subjectTo( -ayMax/V <= Omega <=  ayMax/V  );
+    ocp.subjectTo( -ayMax <= ay <=  ayMax );
     ocp.subjectTo( -deltaMax <= delta <= deltaMax );
     ocp.subjectTo( -jMax <= u <= jMax );
 
@@ -80,7 +83,8 @@ int main( )
     window.addSubplot( beta,   "beta [rad]" );
     window.addSubplot( Omega,   "Omega [rad/s]" );
     window.addSubplot( delta, "steering angle [rad]" );
-    window.addSubplot( u, "steering rate [rad/s]" );
+    window.addSubplot( u, "steering angle rate [rad/s]" );
+    window.addSubplot( ay, "lateral acceleration [m/s^2]" );
     window.addSubplot( aF, "front slip [rad]" );
     window.addSubplot( aR, "rear slip [rad]" );
     window.plot( );
@@ -92,7 +96,7 @@ int main( )
 //    algorithm.set( INTEGRATOR_TYPE      , INT_RK45        );
 //    algorithm.set( INTEGRATOR_TOLERANCE , 1e-10          );
 //    algorithm.set( DISCRETIZATION_TYPE  , MULTIPLE_SHOOTING );
-    algorithm.set( KKT_TOLERANCE        , 1e-13            );
+    algorithm.set( KKT_TOLERANCE        , KKT_th            );
 
     algorithm.solve()                   ;   // and solve the problem.
 

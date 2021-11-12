@@ -27,5 +27,7 @@ double calcTimeST_pac(double V, double nF);
 
 double calcTimeST_jerk(double V, double nF);
 
+double calcTimeST_jerk_relax(double V, double nF);
+
 
 #endif //TESTACADO_LIB_MODELS_H
