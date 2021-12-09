@@ -14,7 +14,7 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 10.0;       // reference velocity
+    const double V = 6.0;       // reference velocity
     const double betaMax = 8e-2;
     const double deltaMax = 0.4;
     const double ayMax = 8;

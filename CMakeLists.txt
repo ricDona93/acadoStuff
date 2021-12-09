@@ -86,6 +86,13 @@ TARGET_LINK_LIBRARIES(testLib  ${ACADO_SHARED_LIBRARIES} ${PYTHON_LIB})
 SET_TARGET_PROPERTIES(testLib
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
+add_library(testLib_shared SHARED
+    libs/lib_models.cpp)
+set_target_properties(testLib_shared PROPERTIES PUBLIC_HEADER libs/lib_models.h)
+TARGET_LINK_LIBRARIES(testLib_shared  ${ACADO_SHARED_LIBRARIES} ${PYTHON_LIB})
+SET_TARGET_PROPERTIES(testLib_shared
+    PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/libs )
+
 add_executable(singleTrackPacXY tests/single_track_pacejka_XY.cpp)
 TARGET_LINK_LIBRARIES(singleTrackPacXY ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackPacXY

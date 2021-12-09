@@ -11,7 +11,7 @@ extern const double KKT_th;
 extern const double betaMax;
 extern const double deltaMax;
 extern const double ayMax;
-extern const double jMax;
+extern const double uyMax;
 
 extern const double lf;
 extern const double lr ;
@@ -29,5 +29,8 @@ double calcTimeST_jerk(double V, double nF);
 
 double calcTimeST_jerk_relax(double V, double nF);
 
+double calcTime_braking(double V, double nF);
+
+double calcTime_kine(double V, double nF);
 
 #endif //TESTACADO_LIB_MODELS_H

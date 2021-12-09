@@ -9,9 +9,10 @@
 const double KKT_th = 1e-14;
 
 const double betaMax = 8e-2;
-const double deltaMax = 0.4;
-const double ayMax = 8;
-const double jMax  = 1.0;
+const double deltaMax = 0.5;
+const double ayMax = 10;
+const double jyMax = 50;
+const double uyMax  = 2.0;
 
 const double lf = 1.1;
 const double lr = 1.6;
@@ -19,7 +20,11 @@ const double Kr = 60000;
 const double Kf = 55000;
 const double  m = 1500;
 const double  I = 2500;
-const double lx = 0.2;
+const double lx = 0.5;
+
+// braking model
+const double axMax = -10;
+const double jxMax = -40;
 
 USING_NAMESPACE_ACADO
 
@@ -128,7 +133,7 @@ double calcTimeST_jerk(double V, double nF){
     ocp.subjectTo( -betaMax <= beta <=  betaMax   );
     ocp.subjectTo( -ayMax <= ay <=  ayMax  );
     ocp.subjectTo( -deltaMax <= delta <= deltaMax );
-    ocp.subjectTo( -jMax <= u <= jMax );
+    ocp.subjectTo(-uyMax <= u <= uyMax );
 
 
     // SOLVE OCP
@@ -202,7 +207,7 @@ double calcTimeST_jerk_relax(double V, double nF){
     ocp.subjectTo( -betaMax <= beta <=  betaMax   );
     ocp.subjectTo( -ayMax <= ay <=  ayMax  );
     ocp.subjectTo( -deltaMax <= delta <= deltaMax );
-    ocp.subjectTo( -jMax <= u <= jMax );
+    ocp.subjectTo(-uyMax <= u <= uyMax );
 
 
     // SOLVE OCP
@@ -225,4 +230,46 @@ double calcTimeST_jerk_relax(double V, double nF){
 
     return tF;
 
+}
+
+double calcTime_braking(double V, double nF){
+
+    double t_axMax = axMax / jxMax;
+    double v_axMax = V + axMax * t_axMax + 0.5 * jxMax * pow(t_axMax, 2);
+    double tF;
+    if(v_axMax <= 0){
+        // stopping without reaching full deceleration
+        tF = (- axMax - sqrt(pow(axMax,2) - 2 * V * jxMax) ) / jxMax;
+    }
+    else{
+        // stopping wih full deceleration
+        tF =  t_axMax - v_axMax / axMax;
+    }
+
+    //tF = - V / axMax;
+
+
+    printf("\n------------- Minimum time for OCP ------------\n");
+    printf("Case selected: braking\n");
+    printf("Reference velocity: %.3e (m/s), lateral offset: %.3e (m)\n", V, nF);
+    printf("T  =  %.3e (s)", tF );
+    printf("\n-----------------------------------------------\n");
+
+    return tF;
+}
+
+double calcTime_kine(double V, double nF){
+
+    // steady steering time
+    double tY = -0.5 * (3*ayMax - sqrt(pow(ayMax,3) + 4 * pow(jyMax, 2) * nF) / sqrt(ayMax)) / jyMax;
+
+    double tF = 4 * (ayMax / jyMax) + 2 * tY;
+
+    printf("\n------------- Minimum time for OCP ------------\n");
+    printf("Case selected: kinematic\n");
+    printf("Reference velocity: %.3e (m/s), lateral offset: %.3e (m)\n", V, nF);
+    printf("T  =  %.3e (s)", tF );
+    printf("\n-----------------------------------------------\n");
+
+    return tF;
 }
