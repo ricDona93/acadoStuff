@@ -6,12 +6,13 @@ int main( )
     USING_NAMESPACE_ACADO
 
     DifferentialState       n, psi, Omega, beta, delta;
+    IntermediateState       ay;
     Control                 u;
     Parameter               T          ;   // the time horizon T
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 5.0;       // reference velocity
+    const double V = 25.0;       // reference velocity
     const double betaMax = 8e-2;
     const double deltaMax = 0.4;
     const double ayMax = 8;
@@ -39,6 +40,8 @@ int main( )
     f << dot(beta)  == -(1+2*(lf*Kf-lr*Kr)/(m*V*V))*Omega -2*(Kf+Kr)/(m*V)*beta   + 2*Kf/(m*V)*delta;
     f << dot(delta) == u;
 
+    ay = -(1+2*(lf*Kf-lr*Kr)/(m*V*V))*Omega -2*(Kf+Kr)/(m*V)*beta   + 2*Kf/(m*V)*delta + Omega*V;
+
     // DEFINE AN OPTIMAL CONTROL PROBLEM
     // ----------------------------------
 
@@ -63,7 +66,7 @@ int main( )
     GnuplotWindow window;
     window.addSubplot( n,   "n [m]" );
     window.addSubplot( psi,   "psi [rad]" );
-    window.addSubplot( beta,   "beta [rad]" );
+    window.addSubplot( ay,   "ay [m/s^2]" );
     window.addSubplot( Omega,   "Omega [rad/s]" );
     window.addSubplot( delta, "steering angle [rad]" );
     window.addSubplot( u, "steering rate [rad/s]" );

@@ -16,7 +16,7 @@ int main(){
     const double vMin=5., vStep=5, nF=2.5;
     double vel;
 
-    std::vector<double> vv(steps), tvST(steps), tvSTJ(steps), tvSTJR(steps), tvBR(steps), tvKI(steps);
+    std::vector<double> vv(steps), tvST(steps), tvSTJ(steps), tvSTJR(steps), tvSTPC(steps), tvBR(steps), tvKI(steps);
 
     for (uint8_t i = 0; i < steps; ++i)
     {
@@ -30,7 +30,10 @@ int main(){
         tvSTJ.at(i) = calcTimeST_jerk(vel, nF);
 
         // single track jerk relax
-//        tvSTJR.at(i) = calcTimeST_jerk_relax(vel, nF);
+        tvSTJR.at(i) = calcTimeST_jerk_relax(vel, nF);
+
+        // simple Pacejka model
+        tvSTPC.at(i) = calcTimeST_jerk_pac(vel, nF);
 
         // braking model
         tvBR.at(i) = calcTime_braking(vel, nF);
@@ -42,7 +45,8 @@ int main(){
     plt::figure_size(1200, 780);
     plt::named_plot("Single-Track", vv, tvST,"b-o");
     plt::named_plot("Single-Track Jerk", vv, tvSTJ,"r-o");
-//    plt::named_plot("Single-Track Jerk Relax", vv, tvSTJR,"g-o");
+    plt::named_plot("Single-Track Jerk Relax", vv, tvSTJR,"m-o");
+    plt::named_plot("Single-Track Jerk Pacejka", vv, tvSTPC,"k-o");
     plt::named_plot("Braking model", vv, tvBR, "y-*");
     plt::named_plot("Kinematic model", vv, tvKI, "g-o");
     plt::xlabel("Velocity (m/s)");

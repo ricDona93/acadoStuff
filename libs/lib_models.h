@@ -29,6 +29,8 @@ double calcTimeST_jerk(double V, double nF);
 
 double calcTimeST_jerk_relax(double V, double nF);
 
+double calcTimeST_jerk_pac(double V, double nF);
+
 double calcTime_braking(double V, double nF);
 
 double calcTime_kine(double V, double nF);
