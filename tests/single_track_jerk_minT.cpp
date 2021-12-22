@@ -12,7 +12,7 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 25.0;       // reference velocity
+    const double V = 30.0;       // reference velocity
     const double betaMax = 8e-2;
     const double deltaMax = 0.4;
     const double ayMax = 8;
@@ -29,7 +29,7 @@ int main( )
     //-------------------------------------
     OCP ocp( 0.0, T );
     ocp.minimizeMayerTerm( T );
-    ocp.minimizeLagrangeTerm(u*u);
+    ocp.minimizeLagrangeTerm(0.05*u*u);
 
 
     // DEFINE THE MODEL EQUATIONS:
@@ -76,10 +76,11 @@ int main( )
     algorithm << window                 ;   // flush the plot window,
 
 
-//    algorithm.set( INTEGRATOR_TYPE      , INT_RK45        );
-//    algorithm.set( INTEGRATOR_TOLERANCE , 1e-10          );
-//    algorithm.set( DISCRETIZATION_TYPE  , SINGLE_SHOOTING );
+    algorithm.set( INTEGRATOR_TYPE      , INT_RK45        );
+    algorithm.set( INTEGRATOR_TOLERANCE , 1e-10          );
+    algorithm.set( DISCRETIZATION_TYPE  , MULTIPLE_SHOOTING );
     algorithm.set( KKT_TOLERANCE        , 1e-14            );
+    algorithm.set( MAX_NUM_ITERATIONS, 1000);
 
     algorithm.solve()                   ;   // and solve the problem.
 
@@ -92,3 +93,4 @@ int main( )
 
     return 0;
 }
+

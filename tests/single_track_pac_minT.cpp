@@ -12,7 +12,7 @@ int main( )
     DifferentialEquation    f( 0.0, T );
 
 
-    const double V = 30.0;       // reference velocity
+    const double V = 15.0;       // reference velocity
     const double betaMax = 8e-2;
     const double deltaMax = 0.4;
     const double jMax  = 1.0;
@@ -22,7 +22,7 @@ int main( )
     const double lr = 1.6;
     const double Kr = 60000;
     const double Kf = 55000;
-    const double By = 20;
+    const double By = 15;
     const double Cy = 1.2;
     const double  m = 1500;
     const double  I = 2500;
@@ -31,7 +31,7 @@ int main( )
     //-------------------------------------
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
     ocp.minimizeMayerTerm( T )          ;   // the time T should be optimized
-    ocp.minimizeLagrangeTerm(delta*delta);
+    ocp.minimizeLagrangeTerm(u*u);
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------

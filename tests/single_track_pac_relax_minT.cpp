@@ -20,6 +20,9 @@ int main( )
     const double ayMax = 8;
     const double jMax  = 1.0;
 
+    const double By = 15;
+    const double Cy = 1.2;
+
     const double lf = 1.1;
     const double lr = 1.6;
     const double Kr = 60000;
@@ -31,16 +34,16 @@ int main( )
     //-------------------------------------
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
     ocp.minimizeMayerTerm( T )          ;   // the time T should be optimized
-//    ocp.minimizeLagrangeTerm(1*u*u);
+    ocp.minimizeLagrangeTerm(0.05*u*u);
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------
     f << dot(n)     == V*(psi+beta);
     f << dot(psi)   == Omega;
-//    f << dot(Omega) == (2*(-(Kf*lf*sin(Cy*atan(By*aF))) + Kr*lr*sin(Cy*atan(By*aR))))/(Cy*By*I);
-    f << dot(Omega) == (2*(-(Kf*lf*aF) + Kr*lr*aR))/(I);
-//    f << dot(beta)  == -(2*(Kf*sin(Cy*atan(By*aF))+Kr*sin(Cy*atan(By*aR)))/(Cy*By*m*V))-Omega;
-    f << dot(beta)  == -(2*(Kf*aF+Kr*aR)/(m*V))-Omega;
+    f << dot(Omega) == (2*(-(Kf*lf*sin(Cy*atan(By*aF))) + Kr*lr*sin(Cy*atan(By*aR))))/(Cy*By*I);
+//    f << dot(Omega) == (2*(-(Kf*lf*aF) + Kr*lr*aR))/(I);
+    f << dot(beta)  == -(2*(Kf*sin(Cy*atan(By*aF))+Kr*sin(Cy*atan(By*aR)))/(Cy*By*m*V))-Omega;
+//    f << dot(beta)  == -(2*(Kf*aF+Kr*aR)/(m*V))-Omega;
     f << dot(aR)    == -V*aR/lx + (V*beta - lr*Omega)/lx;
     f << dot(aF)    == -V*aF/lx + (V*beta - V*delta + lf*Omega)/lx;
     f << dot(delta) == u;
@@ -97,6 +100,7 @@ int main( )
 //    algorithm.set( INTEGRATOR_TOLERANCE , 1e-10          );
 //    algorithm.set( DISCRETIZATION_TYPE  , MULTIPLE_SHOOTING );
     algorithm.set( KKT_TOLERANCE        , KKT_th            );
+    algorithm.set( MAX_NUM_ITERATIONS, 1000);
 
     algorithm.solve()                   ;   // and solve the problem.
 
@@ -109,3 +113,4 @@ int main( )
 
     return 0;
 }
+

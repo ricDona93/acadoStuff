@@ -30,7 +30,7 @@ int main( )
     //-------------------------------------
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
     ocp.minimizeMayerTerm( T )          ;
-    ocp.minimizeLagrangeTerm(delta*delta);
+    ocp.minimizeLagrangeTerm(0.5*delta*delta);
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------

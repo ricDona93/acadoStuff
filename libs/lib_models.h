@@ -7,6 +7,7 @@
 
 // global variables
 extern const double KKT_th;
+extern const int maxNumIteration;
 
 extern const double betaMax;
 extern const double deltaMax;

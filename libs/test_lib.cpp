@@ -1,11 +1,16 @@
 //
 // Created by Riccardo Donà on 10/28/21.
 //
-#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <ctime>
+#include <vector>
+#include <string.h>
+
 #include <acado_gnuplot.hpp>
+
 #include "lib_models.h"
 #include "matplotlibcpp.hpp"
-#include <vector>
 
 namespace plt = matplotlibcpp;
 
@@ -16,7 +21,18 @@ int main(){
     const double vMin=5., vStep=5, nF=2.5;
     double vel;
 
-    std::vector<double> vv(steps), tvST(steps), tvSTJ(steps), tvSTJR(steps), tvSTPC(steps), tvBR(steps), tvKI(steps);
+    std::vector<double> vv(steps), tvST(steps), tvSTJ(steps), tvSTJR(steps), tvSTPC(steps), tvKI(steps), tvBR(steps);
+    std::vector<std::string> models_list;
+
+    models_list.push_back("single_track");
+    models_list.push_back("single_track_jerk");
+    models_list.push_back("single_track_jerk_relax");
+    models_list.push_back("single_track_jerk_pacejka");
+    models_list.push_back("kinematic");
+    models_list.push_back("braking");
+
+    std::vector<std::vector<double>> results_to_file(models_list.size());
+
 
     for (uint8_t i = 0; i < steps; ++i)
     {
@@ -35,12 +51,46 @@ int main(){
         // simple Pacejka model
         tvSTPC.at(i) = calcTimeST_jerk_pac(vel, nF);
 
+        // kinematic model
+        tvKI.at(i) = calcTime_kine(vel, nF);
+
         // braking model
         tvBR.at(i) = calcTime_braking(vel, nF);
 
-        // braking model
-        tvKI.at(i) = calcTime_kine(vel, nF);
     }
+
+    results_to_file[0] = tvST;
+    results_to_file[1] = tvSTJ;
+    results_to_file[2] = tvSTJR;
+    results_to_file[3] = tvSTPC;
+    results_to_file[4] = tvKI;
+    results_to_file[5] = tvBR;
+
+    // save to CSV
+    std::ofstream logFile;
+    logFile.open ("lane_change_T_results.csv");
+//    logFile << (std::chrono::system_clock::now()) << std::endl;
+    for (uint8_t i = 0; i <= models_list.size(); ++i){
+        if(i==0){
+            logFile << "vel";
+        }
+        else {
+            logFile << ", " << models_list[i-1] ;
+        }
+    }
+    logFile << "\n";
+
+    for (uint8_t j = 0; j < steps; ++j){
+        for (uint8_t i = 0; i <= models_list.size(); ++i){
+            if(i==0){
+                logFile << vv[j];
+            } else {
+                logFile << ", " << results_to_file[i-1][j];
+            }
+        }
+        logFile << "\n";
+    }
+    logFile.close();
 
     plt::figure_size(1200, 780);
     plt::named_plot("Single-Track", vv, tvST,"b-o");
@@ -51,11 +101,9 @@ int main(){
     plt::named_plot("Kinematic model", vv, tvKI, "g-o");
     plt::xlabel("Velocity (m/s)");
     plt::ylabel("Time (s)");
-  //  plt::ylim(0,4);
     plt::title("OCP minimum time lane-change");
     plt::legend();
     plt::save("./ocp_laneChange.png");
-//    plt::show();
 
     return EXIT_SUCCESS;
 }

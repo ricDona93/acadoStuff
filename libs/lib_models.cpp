@@ -7,7 +7,7 @@
 
 // global variables
 const double KKT_th = 1e-14;
-const double maxNumIteration = 5e2;
+const int maxNumIteration = 500;
 
 const double betaMax = 8e-2;
 const double deltaMax = 0.5;
@@ -43,7 +43,7 @@ double calcTimeST_delta(double V, double nF){
 
     OCP ocp( 0.0, T )                   ;   // time horizon of the OCP: [0,T]
     ocp.minimizeMayerTerm( T )          ;
-    ocp.minimizeLagrangeTerm(delta*delta);
+    ocp.minimizeLagrangeTerm(0.5*delta*delta);
 
     // DEFINE THE MODEL EQUATIONS:
     // ----------------------------------------------------------
@@ -74,8 +74,8 @@ double calcTimeST_delta(double V, double nF){
 
     // SOLVE OCP
     OptimizationAlgorithm algorithm(ocp);
-    algorithm.set( KKT_TOLERANCE, KKT_th);
     algorithm.set( MAX_NUM_ITERATIONS, maxNumIteration);
+    algorithm.set( KKT_TOLERANCE, KKT_th);
     algorithm.solve();
 
     VariablesGrid params;
@@ -106,7 +106,7 @@ double calcTimeST_jerk(double V, double nF){
 
     OCP ocp( 0.0, T);
     ocp.minimizeMayerTerm(T);
-    ocp.minimizeLagrangeTerm(u*u);
+    ocp.minimizeLagrangeTerm(0.05*u*u);
 
 
     // DEFINE THE MODEL EQUATIONS:
@@ -143,8 +143,8 @@ double calcTimeST_jerk(double V, double nF){
 
     // SOLVE OCP
     OptimizationAlgorithm algorithm(ocp);
-    algorithm.set( KKT_TOLERANCE        , KKT_th);
     algorithm.set( MAX_NUM_ITERATIONS, maxNumIteration);
+    algorithm.set( KKT_TOLERANCE        , KKT_th);
     algorithm.solve()                   ;
 
     VariablesGrid params;
@@ -175,7 +175,7 @@ double calcTimeST_jerk_relax(double V, double nF){
 
     OCP ocp( 0.0, T);
     ocp.minimizeMayerTerm(T);
-    ocp.minimizeLagrangeTerm(u*u);
+    ocp.minimizeLagrangeTerm(0.05*u*u);
 
 
     // DEFINE THE MODEL EQUATIONS:
@@ -218,8 +218,8 @@ double calcTimeST_jerk_relax(double V, double nF){
 
     // SOLVE OCP
     OptimizationAlgorithm algorithm(ocp);
-    algorithm.set( KKT_TOLERANCE        , KKT_th);
     algorithm.set( MAX_NUM_ITERATIONS, maxNumIteration);
+    algorithm.set( KKT_TOLERANCE        , KKT_th);
     algorithm.solve()                   ;
 
     VariablesGrid params;
@@ -250,7 +250,7 @@ double calcTimeST_jerk_pac(double V, double nF){
 
     OCP ocp( 0.0, T);
     ocp.minimizeMayerTerm(T);
-    ocp.minimizeLagrangeTerm(u*u);
+    ocp.minimizeLagrangeTerm(0.05*u*u);
 
 
     // DEFINE THE MODEL EQUATIONS:
