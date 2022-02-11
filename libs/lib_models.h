@@ -14,23 +14,26 @@ extern const double deltaMax;
 extern const double ayMax;
 extern const double uyMax;
 
-extern const double lf;
-extern const double lr ;
-extern const double Kr;
-extern const double Kf;
-extern const double  m;
-extern const double  I;
+struct vehST{
+    double lf;
+    double lr;
+    double Kr;
+    double Kf;
+    double  m;
+    double  I;
+    double lx = 0.5;
+};
 
 
-double calcTimeST_delta(double V, double nF);
+double calcTimeST_delta(vehST veh, double V, double nF);
 
-double calcTimeST_pac(double V, double nF);
+double calcTimeST_pac(vehST veh, double V, double nF);
 
-double calcTimeST_jerk(double V, double nF);
+double calcTimeST_jerk(vehST veh, double V, double nF);
 
-double calcTimeST_jerk_relax(double V, double nF);
+double calcTimeST_jerk_relax(vehST veh, double V, double nF);
 
-double calcTimeST_jerk_pac(double V, double nF);
+double calcTimeST_jerk_pac(vehST veh, double V, double nF);
 
 double calcTime_braking(double V, double nF);
 

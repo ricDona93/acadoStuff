@@ -15,13 +15,6 @@ const double ayMax = 10;
 const double jyMax = 50;
 const double uyMax  = 2.0;
 
-const double lf = 1.1;
-const double lr = 1.6;
-const double Kr = 60000;
-const double Kf = 55000;
-const double  m = 1500;
-const double  I = 2500;
-const double lx = 0.5;
 
 const double By = 15;
 const double Cy = 1.2;
@@ -32,7 +25,15 @@ const double jxMax = -40;
 
 USING_NAMESPACE_ACADO
 
-double calcTimeST_delta(double V, double nF){
+double calcTimeST_delta(vehST veh_params, double V, double nF){
+
+    const double lf = veh_params.lf;
+    const double lr = veh_params.lr;
+    const double Kr = veh_params.Kr;
+    const double Kf = veh_params.Kf;
+    const double  m = veh_params.m;
+    const double  I = veh_params.I;
+    const double lx = veh_params.lx;
 
     // OCP variables
     DifferentialState       n, psi, Omega, beta;
@@ -95,7 +96,15 @@ double calcTimeST_delta(double V, double nF){
 
 }
 
-double calcTimeST_jerk(double V, double nF){
+double calcTimeST_jerk(vehST veh_params, double V, double nF){
+
+    const double lf = veh_params.lf;
+    const double lr = veh_params.lr;
+    const double Kr = veh_params.Kr;
+    const double Kf = veh_params.Kf;
+    const double  m = veh_params.m;
+    const double  I = veh_params.I;
+    const double lx = veh_params.lx;
 
     // OCP variables
     DifferentialState       n, psi, Omega, beta, delta;
@@ -164,7 +173,15 @@ double calcTimeST_jerk(double V, double nF){
 
 }
 
-double calcTimeST_jerk_relax(double V, double nF){
+double calcTimeST_jerk_relax(vehST veh_params, double V, double nF){
+
+    const double lf = veh_params.lf;
+    const double lr = veh_params.lr;
+    const double Kr = veh_params.Kr;
+    const double Kf = veh_params.Kf;
+    const double  m = veh_params.m;
+    const double  I = veh_params.I;
+    const double lx = veh_params.lx;
 
     // OCP variables
     DifferentialState       n, psi, Omega, beta, aF, aR, delta;
@@ -239,7 +256,15 @@ double calcTimeST_jerk_relax(double V, double nF){
 
 }
 
-double calcTimeST_jerk_pac(double V, double nF){
+double calcTimeST_jerk_pac(vehST veh_params, double V, double nF){
+
+    const double lf = veh_params.lf;
+    const double lr = veh_params.lr;
+    const double Kr = veh_params.Kr;
+    const double Kf = veh_params.Kf;
+    const double  m = veh_params.m;
+    const double  I = veh_params.I;
+    const double lx = veh_params.lx;
 
     // OCP variables
     DifferentialState       n, psi, Omega, beta, delta;

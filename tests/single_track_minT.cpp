@@ -69,6 +69,7 @@ int main( )
     window.plot( );
 
 
+
     OptimizationAlgorithm algorithm(ocp);   // construct optimization algorithm,
     algorithm << window                 ;   // flush the plot window,
 
