@@ -1,0 +1,206 @@
+In[217]:=
+ocpC = Import[NotebookDirectory[]<>"results_lane_change_T_vehs.csv"]; ocpC//TableForm
+Out[217]//TableForm= vel	Abe	Lee	Reina	Lundahl	K-LC	Braking
+5	3.01352	3.20123	2.42792	2.8909	1.2198	0.375
+10	1.52695	1.45567	1.29438	1.40041	1.2198	0.875
+15	1.27313	1.52731	1.24318	1.42847	1.2198	1.375
+20	1.31049	1.57167	1.27165	1.47114	1.2198	1.875
+25	1.32895	1.61132	1.29609	1.49928	1.2198	2.375
+30	1.34362	1.64156	1.3197	1.52714	1.2198	2.875
+35	1.36322	1.6783	1.34285	1.55453	1.2198	3.375
+40	1.38082	1.71511	1.36166	1.58202	1.2198	3.875
+45	1.39504	1.75116	1.37695	1.6133	1.2198	4.375
+50	1.40643	1.78071	1.39698	1.64769	1.2198	4.875
+
+
+In[218]:= header=ocpC[[1]];
+label=header[[2;;-1]];
+vel=ocpC[[2;;-1,1]];
+tVel =ocpC[[2;;-1,2;;-2]];
+tBrk = ocpC[[2;;-1,-1]];
+sVel =tVel vel;
+In[224]:= tVel//TableForm
+Out[224]//TableForm= 3.01352	3.20123	2.42792	2.8909	1.2198
+1.52695	1.45567	1.29438	1.40041	1.2198
+1.27313	1.52731	1.24318	1.42847	1.2198
+1.31049	1.57167	1.27165	1.47114	1.2198
+1.32895	1.61132	1.29609	1.49928	1.2198
+1.34362	1.64156	1.3197	1.52714	1.2198
+1.36322	1.6783	1.34285	1.55453	1.2198
+1.38082	1.71511	1.36166	1.58202	1.2198
+1.39504	1.75116	1.37695	1.6133	1.2198
+1.40643	1.78071	1.39698	1.64769	1.2198
+
+
+In[225]:= s2brake[v_]:=Module[{a=10,j=50,tamax, vamax,samax,stmp},
+tamax=a/j;
+vamax = v-a tamax - 0.5 j tamax^2;
+stmp=v tamax -0.5 a tamax^2 - 0.5 1/3 j tamax^3;
+If[vamax <0,
+samax=N@(v t -0.5 a t^2 - 0.5 1/3 j t^3)/.t->(-1.` a+Sqrt[a^2+2.` j v])/j,
+samax=stmp+( vamax t - 0.5a t^2)/.t->vamax/a
+];
+samax
+]
+In[226]:= Plot[s2brake[v],{v,1,35}]
+Out[226]= 
+In[227]:= sBrk=Table[s2brake[vel[[i]]],{i,1,Length@vel}];
+In[228]:= pS=ListLinePlot[{
+Transpose@{vel,sVel[[All,1]]},
+Transpose@{vel,sVel[[All,2]] },
+Transpose@{vel,sVel[[All,3]] },
+Transpose@{vel,sVel[[All,4]] },
+Transpose@{vel,sVel[[All,5]] },
+Transpose@{vel,sBrk}},
+PlotLegends->Placed[LineLegend[label,LegendMarkerSize->10,LegendFunction->Frame,Background->White],{0.15,0.72}],ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->Thick,
+FrameLabel->{Text[Style["Velocity (m/s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+Out[228]= 
+(*Export["/Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pS.png", Rasterize[pS,"Image",RasterSize->3000]]*)
+Out[232]= /Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pS.png
+In[241]:= pT=ListLinePlot[{
+Transpose@{vel,tVel[[All,1]] },
+Transpose@{vel,tVel[[All,2]] },
+Transpose@{vel,tVel[[All,3]] },
+Transpose@{vel,tVel[[All,4]] },
+Transpose@{vel,tVel[[All,5]] },
+Transpose@{vel,tBrk}},PlotRange->{0,5},PlotLegends->
+Placed[LineLegend[label,LegendMarkerSize->10,LegendFunction->Frame, Background->White],{0.35,0.748}],ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->Thick,
+FrameLabel->{Text[Style["Velocity (m/s)",15,FontFamily->"Palatino",Black]],Text[Style["Time (s)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+ImagePadding->{{50,50
+},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+Out[241]= 
+In[242]:= Export["/Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pT.png", Rasterize[pT,"Image",RasterSize->3000]]
+Out[242]= /Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pT.png
+In[202]:= ListLinePlot[{
+Transpose@{tVel[[All,1]],sVel[[All,1]] },
+Transpose@{tVel[[All,2]],sVel[[All,2]] },
+Transpose@{tVel[[All,3]],sVel[[All,3]] },
+Transpose@{tVel[[All,4]],sVel[[All,4]] },
+Transpose@{tVel[[All,5]],sVel[[All,5]] } ,
+Transpose@{tBrk,sBrk}
+},PlotLegends->label,
+PlotRange->{{1,3},{0,80}}]
+Out[202]= 	Abe
+	Lee
+	Reina
+	Lundahl
+	K-LC
+	Braking
+
+
+In[231]:= ListLinePlot[{
+Transpose@{sVel[[All,1]],tVel[[All,1]] },
+Transpose@{sVel[[All,2]],tVel[[All,2]] },
+Transpose@{sVel[[All,3]],tVel[[All,3]] },
+Transpose@{sVel[[All,4]],tVel[[All,4]] },
+Transpose@{sVel[[All,5]],tVel[[All,5]] } ,
+Transpose@{sBrk,tBrk}
+},PlotLegends->label,
+PlotRange->{{0,80},{1,3}}]
+Out[231]= 	Abe
+	Lee
+	Reina
+	Lundahl
+	K-LC
+	Braking
+
+
+In[203]:= Show[{ListLinePlot[
+Transpose@{tVel[[All,2]],sVel[[All,2]] },Filling->Top,PlotRange->{{1,3},{0,80}},ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->Thick,
+FrameLabel->{Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}],
+ListLinePlot[
+Transpose@{tBrk,sBrk},Filling->Bottom,PlotRange->{{1,3},{0,80}},ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->{Thick,ColorData[97][2]},
+FrameLabel->{Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+}]
+Out[203]= 
+In[204]:= pSAVE=ListLinePlot[{
+Transpose@{Append[tVel[[All,2]],3.0],Append[sVel[[All,2]],120] },
+Transpose@{tBrk,sBrk}},
+Filling->{ 2->Bottom, 1->Top,1->{{2},{Red,{Opacity[0.25,Black],HatchFilling[10,5,25]}}}},
+
+PlotRange->{{1,3},{0,80}},
+ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->{Thick},
+FrameLabel->{Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+
+PlotLegends->
+Placed[LineLegend[{"Lee D-LC","Braking"},LegendMarkerSize->10,LegendFunction->Frame, Background->White],{0.12,0.85}],ImageSize->550,PlotMarkers->{Automatic,8},
+
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+
+Out[204]= 
+In[186]:= Export["/Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pSAVE.png", Rasterize[pSAVE,"Image",RasterSize->3000]]
+Out[186]= /Users/riccardodona/Documents/Work/JRC/activities/papers/preventable_lane_change/figures/pSAVE.png
+In[22]:= pSAVE=ListLinePlot[{
+Transpose@{Append[tVel[[All,5]],2.5],Append[sVel[[All,5]],80] },
+Transpose@{tBrk,sBrk}},
+Filling->{ 2->Bottom, 1->2,1->{{2},{Red,{Opacity[0.25,Black],HatchFilling[10,5,25]}}}},
+
+PlotRange->{{1,3},{0,60}},
+ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->{Thick},
+FrameLabel->{Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+
+PlotLegends->
+Placed[LineLegend[{"Lee D-LC","Braking"},LegendMarkerSize->10,LegendFunction->Frame, Background->White],{0.82,0.15}],ImageSize->550,PlotMarkers->{Automatic,8},
+
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+
+Out[22]= 
+pSAVE=ListLinePlot[{
+Transpose@{Flatten@Append[tVel[[All,5]],{tVel[[All,5]][[2]],3.0}],Flatten@Append[sVel[[All,5]],{100,120}]},
+Transpose@{tBrk,sBrk},
+Transpose@{Append[tVel[[All,2]],3.0],Append[sVel[[All,2]],120] }
+},
+
+Filling->{ 3->{{1},{{Opacity[0.25,Red],HatchFilling[15,5,25]},Red}},
+2->Bottom, 1->2,1->{{2},{Red,{Opacity[0.25,Black],HatchFilling[10,5,25]}}},
+3->Top
+},
+
+PlotRange->{{1,3},{0,60}},
+ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->{Thick},
+FrameLabel->{Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]],Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+
+PlotLegends->
+Placed[LineLegend[{"Lee D-LC","Braking"},LegendMarkerSize->10,LegendFunction->Frame, Background->White],{0.82,0.15}],ImageSize->550,PlotMarkers->{Automatic,8},
+
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+Out[60]= 
+In[243]:= pSAVE=ListLinePlot[{
+Transpose@{Prepend[sVel[[All,5]],1],Prepend[tVel[[All,5]],tVel[[All,5]][[1]]]},
+Transpose@{sBrk,tBrk},
+Transpose@{sVel[[All,3]],tVel[[All,3]]} 
+},
+
+Filling->{1->{Top,Opacity[0.1]},2->Top,3->Top,
+1->{{2},{{Opacity[0.2,Blue],HatchFilling[15,5,20]},{Opacity[0.3,Black],HatchFilling[15,5,20]}}} ,(* not prevantable by D-LC vs K-LC *)
+1->{{3},{{Opacity[0.4,Red],HatchFilling[15,5,20]},Red}} (* not prevantable by D-LC vs K-LC *)
+},
+
+PlotRange->{{1,61},{0.5,3}},
+ImageSize->550,PlotMarkers->{Automatic,8},PlotStyle->{Thickness[0.006]},
+FrameLabel->{Text[Style["Distance (m)",15,FontFamily->"Palatino",Black]],Text[Style["TTC (s)",15,FontFamily->"Palatino",Black]]},Frame-> True,GridLines->Automatic,FrameStyle->Directive[Thickness[0.0025],Black],
+(*FrameTicks->{{{-5,-2.5,0,2.5,5},None},{{0.5,1,1.5},None}},*)
+
+PlotLegends->
+Placed[LineLegend[{"K-LC","Lee D-LC","Braking"},LegendMarkerSize->10,LegendFunction->Frame, Background->White],{0.882,0.85}],ImageSize->550,PlotMarkers->{Automatic,8},
+
+ImagePadding->{{50,50},{50,10}},
+FrameTicksStyle->{{14,Black},14}]
+Out[243]= 

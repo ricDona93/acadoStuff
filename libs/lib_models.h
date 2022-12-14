@@ -24,8 +24,24 @@ struct vehST{
     double lx = 0.5;
 };
 
+struct vehDT{
+    double lf;
+    double lr;
+    double Kr;
+    double Kf;
+    double  m;
+    double  I;
+    double tw;
+    double hg;
+    double lx = 0.5;
+};
+
 
 double calcTimeST_delta(vehST veh, double V, double nF);
+
+double calcTimeSTV_delta(vehST veh, double V, double nF);
+
+double calcTimeDT_delta(vehDT veh, double V, double nF);
 
 double calcTimeST_pac(vehST veh, double V, double nF);
 

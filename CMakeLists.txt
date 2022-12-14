@@ -66,9 +66,24 @@ TARGET_LINK_LIBRARIES(singleTrackMinT ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackMinT
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
+add_executable(singleTrackMinS tests/single_track_minS.cpp)
+TARGET_LINK_LIBRARIES(singleTrackMinS ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackMinS
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
 add_executable(singleTrackJerkMinT tests/single_track_jerk_minT.cpp)
 TARGET_LINK_LIBRARIES(singleTrackJerkMinT ${ACADO_SHARED_LIBRARIES} )
 SET_TARGET_PROPERTIES(singleTrackJerkMinT
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
+add_executable(singleTrackJerkRelaxMinT tests/single_track_jerk_relax_minT.cpp)
+TARGET_LINK_LIBRARIES(singleTrackJerkRelaxMinT ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackJerkRelaxMinT
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
+
+add_executable(singleTrackActRelaxMinT tests/single_track_act_relax_minT.cpp)
+TARGET_LINK_LIBRARIES(singleTrackActRelaxMinT ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES(singleTrackActRelaxMinT
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin )
 
 add_executable(singleTrackPacMinT tests/single_track_pac_minT.cpp)
